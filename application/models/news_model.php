@@ -10,23 +10,57 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+/**
+ * Class News_Model
+ */
 class News_Model extends CI_Model
 {
 
+    /**
+     * 表名
+     *
+     * @var string
+     */
     private $table = "news";
 
+    /**
+     * 查询字段
+     *
+     * @var string
+     */
     private $fields = '';
 
+    /**
+     * 限制条数
+     *
+     * @var int
+     */
     private $limit = 5;
 
+    /**
+     * 开始脚标
+     *
+     * @var int
+     */
     private $offset = 0;
 
+    /**
+     * News_Model constructor.
+     */
     public function __construct()
     {
         parent::__construct();
     }
 
 
+    /**
+     * 获取资讯（目前是行业新闻和人力招聘两种）
+     *
+     * @param array $params
+     * @param bool $isCount
+     * @return array
+     * @author tangwen
+     */
     public function getNews(array $params, $isCount = FALSE)
     {
         $this->_buildWhere($params);
@@ -48,6 +82,12 @@ class News_Model extends CI_Model
 
     }
 
+    /**
+     * 公共sql执行函数
+     *
+     * @return mixed
+     * @author tangwen
+     */
     private function _commonQuery() {
         $fields = ($this->fields) ? $this->fields : '*';
 
@@ -60,6 +100,12 @@ class News_Model extends CI_Model
         return $result;
     }
 
+    /**
+     * 组装查询条件
+     *
+     * @param array $params
+     * @author tangwen
+     */
     private function _buildWhere(array $params)
     {
         if (isset($params['news_id']) && !$params['news_id']) {
@@ -75,6 +121,12 @@ class News_Model extends CI_Model
 
     }
 
+    /**
+     * 获取首页行业新闻数据
+     *
+     * @return mixed
+     * @author tangwen
+     */
     public function getIndexNews()
     {
         $params = ['type' => '行业新闻'];
@@ -84,6 +136,12 @@ class News_Model extends CI_Model
         return $this->_commonQuery();
     }
 
+    /**
+     * 获取首页人才招聘数据
+     *
+     * @return mixed
+     * @author tangwen
+     */
     public function getIndexJobs()
     {
         $params = ['type' => '人才招聘'];
@@ -93,10 +151,19 @@ class News_Model extends CI_Model
         return $this->_commonQuery();
     }
 
-    public function getTypeInfo()
+    /**
+     * 获取所有资讯类型
+     *
+     * @return mixed
+     * @author tangwen
+     */
+    public function getAllTypeInfo()
     {
         // todo 日后肯定要分成两个表，一个文章分类表，一个文章详情表。
         // 目前只能写死
+        $this->db->select('news_id, distinct type');
+
+        return $this->db->get($this->table)->result_array();
 
     }
 
