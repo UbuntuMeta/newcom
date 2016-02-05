@@ -49,14 +49,14 @@
         </div>
         <div class="nav">
             <ul class="nav_ul">
-                <li class="a_start"><a href="index.php" style="background:#C30202;">首页</a></li>
-                <li><a href="company.php?id=2">企业简介</a></li>
-                <li><a href="company.php?id=3">服务项目</a></li>
+                <li class="a_start"><a href="/" style="background:#C30202;">首页</a></li>
+                <li><a href="/company/intro">企业简介</a></li>
+                <li><a href="/company/services">服务项目</a></li>
                 <li><a href="category.php?cat_id=8">厂房设备</a></li>
                 <li><a href="category.php?cat_id=1">产品展示</a></li>
-                <li><a href="news.php?type=人才招聘">人才招聘</a></li>
-                <li><a href="company.php?id=4">合作伙伴</a></li>
-                <li><a href="company.php?id=5">联系方式</a></li>
+                <li><a href="/company/jobs">人才招聘</a></li>
+                <li><a href="/company/partners">合作伙伴</a></li>
+                <li><a href="/company.php/contact">联系方式</a></li>
             </ul>
         </div>
     </div>

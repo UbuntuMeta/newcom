@@ -39,7 +39,7 @@ class Com_Model extends CI_Model
      */
     public function getPartner()
     {
-        return $this->db->select('info')->get_where($this->table, ['id' => 4])->row_array();
+        return $this->db->select('com_title,info')->get_where($this->table, ['id' => 4])->row_array();
     }
 
     /**
@@ -50,6 +50,11 @@ class Com_Model extends CI_Model
      */
     public function getContact()
     {
-        return $this->db->select('info')->get_where($this->table, ['id' => 3])->row_array();
+        return $this->db->select('info')->get_where($this->table, ['id' => 5])->row_array();
+    }
+
+    public function getService()
+    {
+        return $this->db->select('com_title, info')->get_where($this->table, ['id' => 3])->row_array();
     }
 }

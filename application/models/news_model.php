@@ -93,4 +93,11 @@ class News_Model extends CI_Model
         return $this->_commonQuery();
     }
 
+    public function getTypeInfo()
+    {
+        // todo 日后肯定要分成两个表，一个文章分类表，一个文章详情表。
+        // 目前只能写死
+
+    }
+
 }

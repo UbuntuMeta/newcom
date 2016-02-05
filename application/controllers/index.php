@@ -7,7 +7,7 @@
  */
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-class Index extends MY_Controller
+class Index extends CI_Controller
 {
 
     public function __construct()
@@ -24,9 +24,9 @@ class Index extends MY_Controller
     {
         $data = array();
         $data['adlist'] = $this->_getAds();
-        $data['intro'] = $this->_getIntro();
+        $data['intro'] = getIntro();
         $data['productPics'] = $this->_getProductPics();
-        $data['partner'] = $this->_getPartner();
+        $data['partner'] = getPartner();
         $data['news'] = $this->_getIndexNews();
         $data['jobs'] = $this->_getIndexJobs();
 

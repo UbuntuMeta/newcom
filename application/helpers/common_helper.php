@@ -146,3 +146,69 @@ function page_param_handle(&$page,$pagesize,$count){
     $page = $page > $countPage ? $countPage : $page;
     $page  = $page < 1 ? 1 : $page;
 }
+
+
+/**
+ * 获取公司简介.
+ *
+ * @return mixed
+ * @author tangwen
+ */
+function getIntro() {
+
+    if (file_exists('./cache/intro.cache.php')) {
+        return include './cache/intro.cache.php';
+    } else {
+        $ci = & get_instance();
+        $ci->load->model('com_model');
+        $data = $ci->com_model->getIntro();
+
+        $array = var_export($data, true);
+        file_put_contents('./cache/intro.cache.php', "<?php return \$data=$array;");
+
+        return $data;
+    }
+}
+
+/**
+ * 获取合作商.
+ *
+ * @return mixed
+ * @author tangwen
+ */
+function getPartner() {
+    if (file_exists('./cache/partners.cache.php')) {
+        return include './cache/partners.cache.php';
+    } else {
+        $ci = & get_instance();
+        $ci->load->model('com_model');
+        $data = $ci->com_model->getPartner();
+
+        $array = var_export($data, true);
+        file_put_contents('./cache/partners.cache.php', "<?php return \$data=$array;");
+
+        return $data;
+    }
+
+}
+
+/**
+ * 获取所有的
+ *
+ * @return mixed
+ * @author tangwen
+ */
+function getAllComTitle() {
+    if (file_exists('./cache/com_title.cache.php')) {
+        return include './cache/com_title.cache.php';
+    } else {
+        $ci = & get_instance();
+        $ci->load->model('com_model');
+        $data = $ci->com_model->getPartner();
+
+        $array = var_export($data, true);
+        file_put_contents('./cache/com_title.cache.php', "<?php return \$data=$array;");
+
+        return $data;
+    }
+}

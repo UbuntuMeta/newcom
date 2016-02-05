@@ -6,7 +6,7 @@
  */
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-class Company extends MY_Controller
+class Company extends CI_Controller
 {
 
     public function __construct()
@@ -23,7 +23,8 @@ class Company extends MY_Controller
     public function index()
     {
         $data = [];
-        $data['intro'] =$this->_getIntro();
+
+        $data['intro'] = getIntro();
 
         $this->template->cpView('intro', $data);
 
@@ -34,9 +35,14 @@ class Company extends MY_Controller
      *
      * @author tangwen
      */
-    public function servicesList()
+    public function services()
     {
 
+        $data = [];
+
+        $data['services'] = getServices();
+
+        $this->template->cpView('service', $data);
     }
 
     /**
@@ -63,10 +69,48 @@ class Company extends MY_Controller
     {
         $data = [];
 
-        $data['contact'] = $this->com_model->getContact();
+        $data['contact'] = $this->_getContact();
 
         $this->template->cpView('partner', $data);
     }
 
+    /**
+     * 获取带缓存的联系方式数据
+     *
+     * @return mixed
+     * @author tangwen
+     */
+    private function _getContact()
+    {
+        if (file_exists('./cache/contact.cache.php')) {
+            return include './cache/contact.cache.php';
+        } else {
+            $data = $this->com_model->getContact();
 
+            $array = var_export($data, true);
+            file_put_contents('./cache/contact.cache.php', "<?php return \$data=$array;");
+
+            return $data;
+        }
+    }
+
+    /**
+     * 获取带缓存的服务项目数据
+     *
+     * @return mixed
+     * @author tangwen
+     */
+    private function _getServices()
+    {
+        if (file_exists('./cache/services.cache.php')) {
+            return include './cache/services.cache.php';
+        } else {
+            $data = $this->com_model->getService();
+
+            $array = var_export($data, true);
+            file_put_contents('./cache/services.cache.php', "<?php return \$data=$array;");
+
+            return $data;
+        }
+    }
 }
