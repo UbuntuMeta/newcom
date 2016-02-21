@@ -3,9 +3,6 @@
 /**
  * 新闻模型
  *
- * @link http://www.yungengxin.com
- * @since v1.0
- * @author YunGengxin Dev Team
  */
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
@@ -13,7 +10,7 @@ if (!defined('BASEPATH'))
 /**
  * Class News_Model
  */
-class News_Model extends CI_Model
+class News_model extends CI_Model
 {
 
     /**
@@ -59,7 +56,7 @@ class News_Model extends CI_Model
      * @param array $params
      * @param bool $isCount
      * @return array
-     * @author tangwen
+     * @author freephp
      */
     public function getNews(array $params, $isCount = FALSE)
     {
@@ -86,7 +83,7 @@ class News_Model extends CI_Model
      * 公共sql执行函数
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     private function _commonQuery() {
         $fields = ($this->fields) ? $this->fields : '*';
@@ -104,7 +101,7 @@ class News_Model extends CI_Model
      * 组装查询条件
      *
      * @param array $params
-     * @author tangwen
+     * @author freephp
      */
     private function _buildWhere(array $params)
     {
@@ -125,7 +122,7 @@ class News_Model extends CI_Model
      * 获取首页行业新闻数据
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     public function getIndexNews()
     {
@@ -140,7 +137,7 @@ class News_Model extends CI_Model
      * 获取首页人才招聘数据
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     public function getIndexJobs()
     {
@@ -155,7 +152,7 @@ class News_Model extends CI_Model
      * 获取所有资讯类型
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     public function getAllTypeInfo()
     {

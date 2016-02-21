@@ -138,7 +138,7 @@
                         <li style="border-bottom: 1px dashed rgb(223,223, 223);">
                             <a href="newsdetails.php?id=<?php echo $x['news_id'];?>"><?php echo $x['news_title'];?></a>
                         </li>
-                    <? }?>
+                    <?php }?>
 
                 </ul>
             </div>

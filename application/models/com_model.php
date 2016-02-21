@@ -3,14 +3,11 @@
 /**
  * 公司模型
  *
- * @link http://www.yungengxin.com
- * @since v1.0
- * @author YunGengxin Dev Team
  */
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Com_Model extends CI_Model
+class Com_model extends CI_Model
 {
 
     private $table = "company";
@@ -24,7 +21,7 @@ class Com_Model extends CI_Model
      * 获取公司简介
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     public function getIntro()
     {
@@ -35,7 +32,7 @@ class Com_Model extends CI_Model
      * 获取合作伙伴
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     public function getPartner()
     {
@@ -46,7 +43,7 @@ class Com_Model extends CI_Model
      * 获取公司联系方式
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     public function getContact()
     {

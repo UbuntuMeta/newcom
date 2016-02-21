@@ -3,19 +3,14 @@
 /**
  * 公司模型
  *
- * @link http://www.yungengxin.com
- * @since v1.0
- * @author YunGengxin Dev Team
  */
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Product_Model extends CI_Model
+class Product_model extends CI_Model
 {
 
     private $table = "product";
-
-
     protected $fields = ''; // 要select出的字段
     public function __construct()
     {
@@ -29,7 +24,7 @@ class Product_Model extends CI_Model
      * @param int $offset
      * @param int $limit
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     public function catProduct($cat_id, $offset = 0, $limit = 5)
     {
@@ -61,7 +56,7 @@ class Product_Model extends CI_Model
      * 获取产品图片信息
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     public function getProductPics()
     {
