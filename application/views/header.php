@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<div id="wrap">
+<div id="<?php if(isset($is_news)) {echo 'newswrap';} else { echo 'wrap';};?>">
     <!-- 包含header部分 -->
     <link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH ?>style.css">
     <!-- header区域 -->

@@ -18,11 +18,12 @@ class Index extends CI_Controller
     /**
      * 首页加载资源
      *
-     * @author tangwen
+     * @author freephp
      */
     public function index()
     {
         $data = array();
+        
         $data['adlist'] = $this->_getAds();
         $data['intro'] = getIntro();
         $data['productPics'] = $this->_getProductPics();
@@ -36,7 +37,7 @@ class Index extends CI_Controller
     /**
      * 发布留言咨询
      *
-     * @author tangwen
+     * @author freephp
      */
     public function post()
     {
@@ -44,10 +45,11 @@ class Index extends CI_Controller
     }
 
     /**
-     * 获取轮播广告信息.因为改变不多，且在首页显示，所以加个缓存文件，在修改的时候重新生成该文件。
+     * 获取轮播广告信息.
+     * 因为改变不多，且在首页显示，所以加个缓存文件，在修改的时候重新生成该文件。
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     private function _getAds()
     {    if (file_exists('./cache/ads.cache.php')) {
@@ -68,7 +70,7 @@ class Index extends CI_Controller
      * 获取产品图片
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     private function _getProductPics()
     {
@@ -91,7 +93,7 @@ class Index extends CI_Controller
      * 获取首页展示行业新闻
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     private function _getIndexNews()
     {
@@ -112,7 +114,7 @@ class Index extends CI_Controller
      * 获取首页展示人力招聘
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     private function _getIndexJobs()
     {

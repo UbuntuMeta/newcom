@@ -104,7 +104,7 @@ function checkMobile($mobile) {
  *
  * @param $email
  * @return bool
- * @author tangwen
+ * @author freephp
  */
 function checkEmail($email) {
     return (mb_eregi("^([_a-z0-9-]+)(.[_a-z0-9-]+)*@([a-z0-9-]+)(.[a-z0-9-]+)*(.[a-z]{2,4})$",$email)) ? true : false;
@@ -125,7 +125,7 @@ function uuid() {
  * @param $param
  * @return bool
  *
- * @author tangwen
+ * @author freephp
  */
 function existParam($param) {
     if (isset($param) && !$param) {
@@ -152,7 +152,7 @@ function page_param_handle(&$page,$pagesize,$count){
  * 获取公司简介.
  *
  * @return mixed
- * @author tangwen
+ * @author freephp
  */
 function getIntro() {
 
@@ -174,7 +174,7 @@ function getIntro() {
  * 获取合作商.
  *
  * @return mixed
- * @author tangwen
+ * @author freephp
  */
 function getPartner() {
     if (file_exists('./cache/partners.cache.php')) {
@@ -196,7 +196,7 @@ function getPartner() {
  * 获取所有的
  *
  * @return mixed
- * @author tangwen
+ * @author freephp
  */
 function getAllComTitle() {
     if (file_exists('./cache/com_title.cache.php')) {
@@ -204,7 +204,7 @@ function getAllComTitle() {
     } else {
         $ci = & get_instance();
         $ci->load->model('com_model');
-        $data = $ci->com_model->getPartner();
+        $data = $ci->com_model->getAllComTitle();
 
         $array = var_export($data, true);
         file_put_contents('./cache/com_title.cache.php', "<?php return \$data=$array;");

@@ -16,7 +16,7 @@ class Common_Controller extends  CI_Controller{
      * 获取公司简介.
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     protected function _getIntro()
     {
@@ -37,7 +37,7 @@ class Common_Controller extends  CI_Controller{
      * 获取合作商.
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     protected function _getPartner()
     {

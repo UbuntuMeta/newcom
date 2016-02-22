@@ -54,4 +54,9 @@ class Com_model extends CI_Model
     {
         return $this->db->select('com_title, info')->get_where($this->table, ['id' => 3])->row_array();
     }
+
+    public function getAllComTitle()
+    {
+        return $this->db->select('id,com_title, info')->get($this->table)->result_array();
+    }
 }

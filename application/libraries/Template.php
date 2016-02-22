@@ -59,7 +59,13 @@ class Template {
         $loader = & load_class('Loader', 'core');
 
         //组装试图
-        $header = $loader->view('header', array('js' => $this->js, 'css' => $this->css, 'title' => (isset($vars['title']) ? $vars['title'] : "")), true);
+        /**
+        * 因为公司相关页面的wrap的css不同，所以这里单独判断。
+        * 如果有设置is_news键,则为公司信息相关页面。
+        **/
+        $is_news = false;
+        if (isset($var['is_news'])) $is_news = true;
+        $header = $loader->view('header', array('is_news' => $is_news, 'js' => $this->js, 'css' => $this->css, 'title' => (isset($vars['title']) ? $vars['title'] : "")), true);
         $content = $loader->view($view, $vars, true);
         $footer = $loader->view('footer', array(), true);
 

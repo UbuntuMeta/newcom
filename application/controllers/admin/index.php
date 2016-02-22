@@ -32,7 +32,7 @@ class Index extends CI_Controller{
      *
      * @return array
      *
-     * @author tangwen
+     * @author freephp
      */
     private function _getServerInfos()
     {

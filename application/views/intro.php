@@ -16,7 +16,7 @@
             <div class="two_form newsform">
                 <img src="%E4%BC%81%E4%B8%9A%E7%AE%80%E4%BB%8B_files/pic19.jpg" style="margin-bottom:4px;">
                 <form>
-                    <input value="联系人" class="linkman" type="text">
+                    <input value="联系人" c                lass="linkman" type="text">
                     <input value="电子邮件" class="email" type="text">
                     <input value="主题" class="subject" type="text">
                     <textarea class="content" name="content">内容</textarea>
@@ -28,8 +28,8 @@
             </div>
         </div>
     </div>
-    <div class="newsright fr">
-        <div class="trends" s><a href="#"> <?php echo $partner['com_title'];?></a></div><!--trends动态-->
-        <div style="padding:10px;"><?php echo $partner['info'];?></div>
-    </div>
+<div class="newsright fr">
+        	<div class="trends" s><a href="#"> <?php echo $intro['com_title']?></a></div><!--trends动态-->
+  <div style="padding:10px;"><?php echo $intro['info'];?></div>
+</div>
 </div>

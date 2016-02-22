@@ -2,7 +2,7 @@
 /**
  * 公司控制器
  *
- * @author tangwen <fightforphp@gmail.com>
+ * @author freephp <fightforphp@gmail.com>
  */
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
@@ -18,13 +18,17 @@ class Company extends CI_Controller
     /**
      * 公司简介
      *
-     * @author tangwen
+     * @author freephp
      */
     public function index()
     {
         $data = [];
 
         $data['intro'] = getIntro();
+
+        $data['comlist'] = getAllComTitle();
+
+        $data['is_news'] = true;
 
         $this->template->cpView('intro', $data);
 
@@ -33,7 +37,7 @@ class Company extends CI_Controller
     /**
      * 服务项目
      *
-     * @author tangwen
+     * @author freephp
      */
     public function services()
     {
@@ -41,6 +45,7 @@ class Company extends CI_Controller
         $data = [];
 
         $data['services'] = getServices();
+        $data['is_news'] = true;
 
         $this->template->cpView('service', $data);
     }
@@ -48,13 +53,15 @@ class Company extends CI_Controller
     /**
      * 合作伙伴
      *
-     * @author tangwen
+     * @author freephp
      */
     public function partners()
     {
         $data = [];
 
-        $data['partner'] = $this->_getPartner();
+        $data['partner'] = getPartner();
+        $data['comlist'] = getAllComTitle();
+        $data['is_news'] = true;
 
         $this->template->cpView('partner', $data);
 
@@ -63,7 +70,7 @@ class Company extends CI_Controller
     /**
      * 联系方式
      *
-     * @author tangwen
+     * @author freephp
      */
     public function contact()
     {
@@ -78,7 +85,7 @@ class Company extends CI_Controller
      * 获取带缓存的联系方式数据
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     private function _getContact()
     {
@@ -98,7 +105,7 @@ class Company extends CI_Controller
      * 获取带缓存的服务项目数据
      *
      * @return mixed
-     * @author tangwen
+     * @author freephp
      */
     private function _getServices()
     {
