@@ -50,7 +50,7 @@
         <div class="nav">
             <ul class="nav_ul">
                 <li class="a_start"><a href="/" style="background:#C30202;">首页</a></li>
-                <li><a href="/company/intro">企业简介</a></li>
+                <li><a href="/company/index">企业简介</a></li>
                 <li><a href="/company/services">服务项目</a></li>
                 <li><a href="category.php?cat_id=8">厂房设备</a></li>
                 <li><a href="category.php?cat_id=1">产品展示</a></li>

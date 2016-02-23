@@ -8,11 +8,15 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 class Company extends CI_Controller
 {
+    protected $data = array(); // 装数据的数组
 
     public function __construct()
     {
         parent::__construct();
         $this->load->model('com_model');
+        /* 配置公共导航数据和页面标识 */
+        $this->data['comlist'] = getAllComTitle();
+        $this->data['is_news'] = true;
     }
 
     /**
@@ -22,16 +26,9 @@ class Company extends CI_Controller
      */
     public function index()
     {
-        $data = [];
+        $this->data['intro'] = getIntro();
 
-        $data['intro'] = getIntro();
-
-        $data['comlist'] = getAllComTitle();
-
-        $data['is_news'] = true;
-
-        $this->template->cpView('intro', $data);
-
+        $this->template->cpView('intro', $this->data);
     }
 
     /**
@@ -41,13 +38,9 @@ class Company extends CI_Controller
      */
     public function services()
     {
+        $this->data['services'] = getServices();
 
-        $data = [];
-
-        $data['services'] = getServices();
-        $data['is_news'] = true;
-
-        $this->template->cpView('service', $data);
+        $this->template->cpView('service', $this->data);
     }
 
     /**
@@ -57,14 +50,9 @@ class Company extends CI_Controller
      */
     public function partners()
     {
-        $data = [];
+        $this->data['partner'] = $this->_getServices();
 
-        $data['partner'] = getPartner();
-        $data['comlist'] = getAllComTitle();
-        $data['is_news'] = true;
-
-        $this->template->cpView('partner', $data);
-
+        $this->template->cpView('partner', $this->data);
     }
 
     /**
@@ -74,11 +62,9 @@ class Company extends CI_Controller
      */
     public function contact()
     {
-        $data = [];
+        $this->data['contact'] = $this->_getContact();
 
-        $data['contact'] = $this->_getContact();
-
-        $this->template->cpView('partner', $data);
+        $this->template->cpView('partner', $this->data);
     }
 
     /**
