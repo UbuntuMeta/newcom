@@ -64,9 +64,15 @@ class Template {
         * 如果有设置is_news键,则为公司信息相关页面。
         **/
         $is_news = false;
-        if (isset($var['is_news'])) $is_news = true;
+        $nav = '';
+
+        if (isset($vars['is_news'])) {
+            $is_news = true;
+            $nav = $loader->view('comnav', array('comlist' => $vars['comlist']), true);
+        }
+
         $header = $loader->view('header', array('is_news' => $is_news, 'js' => $this->js, 'css' => $this->css, 'title' => (isset($vars['title']) ? $vars['title'] : "")), true);
-        $content = $loader->view($view, $vars, true);
+        $content = $nav . $loader->view($view, $vars, true);
         $footer = $loader->view('footer', array(), true);
 
         if ($return)
