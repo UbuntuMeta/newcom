@@ -38,7 +38,7 @@ class Company extends CI_Controller
      */
     public function services()
     {
-        $this->data['services'] = getServices();
+        $this->data['services'] = $this->_getServices();
 
         $this->template->cpView('service', $this->data);
     }
@@ -50,7 +50,7 @@ class Company extends CI_Controller
      */
     public function partners()
     {
-        $this->data['partner'] = $this->_getServices();
+        $this->data['partner'] = getPartner();
 
         $this->template->cpView('partner', $this->data);
     }
