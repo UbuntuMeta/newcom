@@ -88,7 +88,6 @@ class Index extends CI_Controller
 
     }
 
-
     /**
      * 获取首页展示行业新闻
      *
@@ -129,6 +128,5 @@ class Index extends CI_Controller
 
             return $data;
         }
-
     }
 }

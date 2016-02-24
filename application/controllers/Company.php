@@ -64,7 +64,7 @@ class Company extends CI_Controller
     {
         $this->data['contact'] = $this->_getContact();
 
-        $this->template->cpView('partner', $this->data);
+        $this->template->cpView('contact', $this->data);
     }
 
     /**

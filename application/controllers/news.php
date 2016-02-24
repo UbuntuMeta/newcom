@@ -2,7 +2,7 @@
 /**
  * 资讯控制器
  *
- * @author freephp <fightforphp@gmail.com>
+ * @author tangwen <fightforphp@gmail.com>
  */
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');

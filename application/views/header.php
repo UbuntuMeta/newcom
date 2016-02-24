@@ -56,7 +56,7 @@
                 <li><a href="category.php?cat_id=1">产品展示</a></li>
                 <li><a href="/company/jobs">人才招聘</a></li>
                 <li><a href="/company/partners">合作伙伴</a></li>
-                <li><a href="/company.php/contact">联系方式</a></li>
+                <li><a href="/company/contact">联系方式</a></li>
             </ul>
         </div>
     </div>
