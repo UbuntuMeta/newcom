@@ -5,7 +5,7 @@
             <h2 class="newstitle"><a href="#">关于我们</a></h2>
             <ul class="newsnav">
                 <?php foreach($comlist as $v){?>
-                    <li><a href="company.php?id=<?php echo $v['id'];?>"><?php echo $v['com_title'];?></a></li>
+                    <li><a href="/company/<?php echo $navArray[$v['id']];?>"><?php echo $v['com_title'];?></a></li>
 
                 <?php }?>
             </ul>

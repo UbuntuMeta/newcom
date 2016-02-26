@@ -35,16 +35,6 @@ class Index extends CI_Controller
     }
 
     /**
-     * 发布留言咨询
-     *
-     * @author freephp
-     */
-    public function post()
-    {
-        var_dump($_POST);die();
-    }
-
-    /**
      * 获取轮播广告信息.
      * 因为改变不多，且在首页显示，所以加个缓存文件，在修改的时候重新生成该文件。
      *

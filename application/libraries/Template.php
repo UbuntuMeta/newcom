@@ -68,7 +68,7 @@ class Template {
 
         if (isset($vars['is_news'])) {
             $is_news = true;
-            $nav = $loader->view('comnav', array('comlist' => $vars['comlist']), true);
+            $nav = $loader->view('comnav', array('comlist' => $vars['comlist'], 'navArray' => $vars['navArray']), true);
         }
 
         $header = $loader->view('header', array('is_news' => $is_news, 'js' => $this->js, 'css' => $this->css, 'title' => (isset($vars['title']) ? $vars['title'] : "")), true);

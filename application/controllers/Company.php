@@ -10,6 +10,14 @@ class Company extends CI_Controller
 {
     protected $data = array(); // 装数据的数组
 
+    // 导航数组
+    protected $navArray = [
+        2 => 'intro',
+        3 => 'services',
+        4 => 'partners',
+        5 => 'contact'
+    ];
+
     public function __construct()
     {
         parent::__construct();
@@ -17,6 +25,7 @@ class Company extends CI_Controller
         /* 配置公共导航数据和页面标识 */
         $this->data['comlist'] = getAllComTitle();
         $this->data['is_news'] = true;
+        $this->data['navArray'] = $this->navArray;
     }
 
     /**
