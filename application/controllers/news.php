@@ -2,7 +2,7 @@
 /**
  * 资讯控制器
  *
- * @author tangwen <fightforphp@gmail.com>
+ * @author freephp <fightforphp@gmail.com>
  */
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
@@ -15,6 +15,9 @@ class News extends CI_Controller
         $this->load->model('news_model');
     }
 
+    /**
+    *  
+    */
     public function newsList()
     {
 

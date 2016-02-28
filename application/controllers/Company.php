@@ -2,7 +2,7 @@
 /**
  * 公司控制器
  *
- * @author freephp <fightforphp@gmail.com>
+ * @author freephp<fightforphp@gmail.com>
  */
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
@@ -24,7 +24,7 @@ class Company extends CI_Controller
         $this->load->model('com_model');
         /* 配置公共导航数据和页面标识 */
         $this->data['comlist'] = getAllComTitle();
-        $this->data['is_news'] = true;
+        $this->data['is_com'] = true;
         $this->data['navArray'] = $this->navArray;
     }
 

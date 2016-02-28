@@ -55,7 +55,6 @@ class Index extends CI_Controller
         }
     }
 
-
     /**
      * 获取产品图片
      *

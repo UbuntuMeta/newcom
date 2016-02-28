@@ -164,4 +164,16 @@ class News_model extends CI_Model
 
     }
 
+
+/**
+ * @param  int $id 新闻主键
+ * @return [type]
+ */
+    public function getNewsById($id)
+    {
+        if ($id < 0) return array();
+
+        $this->db->get($this->table)->where('news_id', $id)->row_array();
+    }
+
 }

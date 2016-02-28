@@ -66,7 +66,7 @@ class Template {
         $is_news = false;
         $nav = '';
 
-        if (isset($vars['is_news'])) {
+        if (isset($vars['is_com'])) {
             $is_news = true;
             $nav = $loader->view('comnav', array('comlist' => $vars['comlist'], 'navArray' => $vars['navArray']), true);
         }
