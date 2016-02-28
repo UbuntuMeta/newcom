@@ -33,9 +33,25 @@ class News extends CI_Controller
 
     }
 
-    public function details($id='')
+    /**
+     * 行业新闻详情页面
+     * @param  string $id 文章ID
+     * @return void
+     */
+    public function article($id = '')
     {
-        var_dump($id);die();
+        $data['record'] = $this->news_model->getNewsByID($id);
+        var_dump($data);die();
+    }
+
+    /**
+     * 人力招聘详情页面
+     * @param  string $id 招聘信息ID
+     * @return void
+     */
+    public function job($id = '')
+    {
+
     }
 
     /**
@@ -43,7 +59,7 @@ class News extends CI_Controller
     * 
     * @return void
     */
-    public function jobs()
+    public function jobsList()
     {
         $data['newsList'] = $this->news_model->getNews(array('type' => '人才招聘'));
 

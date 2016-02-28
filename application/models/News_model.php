@@ -173,7 +173,7 @@ class News_model extends CI_Model
     {
         if ($id < 0) return array();
 
-        $this->db->get($this->table)->where('news_id', $id)->row_array();
+        $this->db->get_where($this->table, ['news_id' => $id])->row_array();
     }
 
 }
