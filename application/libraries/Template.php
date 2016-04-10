@@ -75,6 +75,7 @@ class Template {
         $content = $nav . $loader->view($view, $vars, true);
         $footer = $loader->view('footer', array(), true);
 
+        print_r($vars);die();
         if ($return)
             return $header .  $content . $footer;
         else

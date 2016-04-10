@@ -123,17 +123,19 @@ function uuid() {
  * 判断某个查询条件存在且非空，如果是则返回true,反之为false.
  *
  * @param $param
+ * @param string $key
  * @return bool
  *
  * @author freephp
  */
-function existParam($param) {
-    if (isset($param) && !$param) {
+function existParam($param , $key) {
+    if (isset($param[$key]) && !$param[$key]) {
         return true;
     } else {
         return false;
     }
 }
+
 
 /**
  * 分页参数处理

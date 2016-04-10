@@ -41,7 +41,7 @@ class News extends CI_Controller
     public function article($id = '')
     {
         $data['record'] = $this->news_model->getNewsByID($id);
-        var_dump($data);die();
+        $this->template->cpView('article', $this->data);
     }
 
     /**
@@ -51,7 +51,8 @@ class News extends CI_Controller
      */
     public function job($id = '')
     {
-
+        $data['record'] = $this->news_model->getNewsByID($id);
+        $this->template->cpView('jobList', $this->data);
     }
 
     /**
@@ -73,6 +74,6 @@ class News extends CI_Controller
      */
     protected function _getNewsTypes()
     {
-        $this->news_model->getAllType();
+        return $this->news_model->getAllType();
     }
 }

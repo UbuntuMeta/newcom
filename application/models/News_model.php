@@ -62,7 +62,7 @@ class News_model extends CI_Model
     {
         $this->_buildWhere($params);
 
-        $this->limit = (existParam($params['limit'])) ? $params['limit'] : 1;
+        $this->limit = (existParam($params,'limit')) ? $params['limit'] : 1;
         $page = (existParam($params['page'])) ? $params['page'] : 1;
         $offset = ($page - 1) * $this->limit;
         $this->offset = $offset >= 0 ? $offset : 0;
@@ -105,14 +105,14 @@ class News_model extends CI_Model
      */
     private function _buildWhere(array $params)
     {
-        if (isset($params['news_id']) && !$params['news_id']) {
+        if (existParam($params, 'news_id')) {
             $this->db->where(['news_id' => $params['news_id']]);
 
         }
-        if (isset($params['news_title']) && !$params['news_title']) {
+        if (existParam($params, 'news_title')) {
             $this->db->like(['news_title' => $params['news_title']]);
         }
-        if (isset($params['type']) && !$params['type']) {
+        if (existParam($params, 'type')) {
             $this->db->where(['type' => $params['type']]);
         }
 
